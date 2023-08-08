@@ -1,5 +1,6 @@
 package com.bonds.backend.models;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -17,10 +18,12 @@ import java.util.List;
 public class Book {
 
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
     private String bookName;
 
     @OneToMany(mappedBy = "book")
+    @JsonManagedReference
     private List<Trade> tradeList;
 
     @ManyToMany
