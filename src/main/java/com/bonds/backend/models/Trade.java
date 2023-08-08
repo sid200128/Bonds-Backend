@@ -31,18 +31,18 @@ public class Trade {
     private Date settlementDate;
 
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.EAGER)
     @JsonBackReference
     @JoinColumn(name = "security_id")
     private Security security;
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.EAGER)
     @JsonBackReference
     @JoinColumn(name = "book_id")
     private Book book;
 
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.EAGER)
     @JsonBackReference
     @JoinColumn(name = "counterparty_id")
     private Counterparty counterparty;

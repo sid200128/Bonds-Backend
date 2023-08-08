@@ -1,6 +1,7 @@
 package com.bonds.backend.models;
 
 import com.fasterxml.jackson.annotation.JsonIdentityInfo;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 import com.fasterxml.jackson.annotation.ObjectIdGenerators;
 import lombok.AllArgsConstructor;
@@ -35,5 +36,7 @@ public class Security {
 
     @OneToMany(mappedBy = "security")
     @JsonManagedReference
+    @JsonIgnore
     private List<Trade> tradeList;
+
 }
