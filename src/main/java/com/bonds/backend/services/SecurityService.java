@@ -20,19 +20,19 @@ public class SecurityService {
     @Autowired
     private SecurityRepository securityRepository;
 
-    public String getAllSecurities(){
+    public List<Security> getAllSecurities(){
         List<Security> securityList = new ArrayList<>();
         ObjectMapper mapper = new ObjectMapper();
         securityRepository.findAll().forEach(securityList::add);
-        String jsonInString="";
-        try {
-            jsonInString = mapper.writerWithDefaultPrettyPrinter().writeValueAsString(securityList);
-            System.out.println(jsonInString);
-        } catch (JsonProcessingException e) {
-            // TODO Auto-generated catch block
-            e.printStackTrace();
-        }
-        return jsonInString;
+//        String jsonInString="";
+//        try {
+//            jsonInString = mapper.writerWithDefaultPrettyPrinter().writeValueAsString(securityList);
+//        } catch (JsonProcessingException e) {
+//            // TODO Auto-generated catch block
+//            e.printStackTrace();
+//        }
+//        return jsonInString;
+        return securityList;
 
     }
 

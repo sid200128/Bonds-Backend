@@ -20,9 +20,10 @@ public class SecurityController {
     //                              GET_ALL_SECURITIES
     //-------------------------------------------------------------------------------------
 
+    @CrossOrigin(origins = "http://localhost:3000")
     @RequestMapping(method = RequestMethod.GET,value = "/security")
-    public ResponseEntity<String> getAllSecurities(){
-        return ResponseEntity.ok(securityService.getAllSecurities());
+    public List<Security> getAllSecurities(){
+        return securityService.getAllSecurities();
     }
 
     // ------------------------------------------------------------------------------------
